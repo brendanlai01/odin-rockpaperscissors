@@ -53,6 +53,7 @@
     function game(){
         let winCounter = 0;
         let loseCounter = 0;
+        let drawCounter = 0;
 
         for(let i = 0; i < 5; i++){
             let temp = playRound();
@@ -61,8 +62,11 @@
                 winCounter++;
             } else if(temp == 2){
                 loseCounter++;
+            } else{
+                drawCounter++;
             }
         }
+
     }
     
 
