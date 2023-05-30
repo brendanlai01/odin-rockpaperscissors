@@ -28,7 +28,7 @@
 
         if(playerSelection == 'rock' && computerSelection == 'scissors'){
             console.log('You Win! Computer played Scissors');
-            return 1;
+            return 1;   
         } else if (playerSelection == 'paper' && computerSelection == 'rock'){
             console.log('You Win! Computer played Rock');
             return 1;
@@ -67,7 +67,13 @@
             }
         }
 
-
+        if(winCounter > loseCounter){
+            alert(`You won in a best of 5 against the computer! It was ${winCounter}-${loseCounter} with ${drawCounter} ties`);
+        } else if(loseCounter > winCounter){
+            alert(`You lost in a best of 5 against the computer. It was ${winCounter}-${loseCounter} with ${drawCounter} ties`);
+        } else if (winCounter == loseCounter){
+            alert(`You tied in a best of 5 against the computer! It was ${winCounter}-${loseCounter} with ${drawCounter} ties`);
+        }
     }
     
 
