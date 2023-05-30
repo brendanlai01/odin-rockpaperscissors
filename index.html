@@ -27,19 +27,20 @@
         playerSelection = playerSelection.toLowerCase();
 
         if(playerSelection == 'rock' && computerSelection == 'scissors'){
-            return 'You Win! Computer played Scissors';
-        } else if (playerSelection == 'rock' && computerSelection == 'paper'){
-            return 'You Lose! Computer played Paper';
-        } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
-            return 'You Lose! Computer played Rock';
-        } else if (playerSelection == 'scissors' && computerSelection == "paper"){
-            return 'You Win! Computer played Paper';
+            console.log('You Win! Computer played Scissors');
         } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-            return 'You Win! Computer played Rock';
+            console.log('You Win! Computer played Rock');
+        } else if (playerSelection == 'scissors' && computerSelection == "paper"){
+            console.log('You Win! Computer played Paper');
+        } else if (playerSelection == 'rock' && computerSelection == 'paper'){
+            console.log('You Lose! Computer played Paper');
+        } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+            console.log('You Lose! Computer played Rock');
         } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
-            return 'You Lose! Computer played Scissors';
+            console.log('You Lose! Computer played Scissors');
         } else if (playerSelection == computerSelection){
-            return 'Tie Game!';
+            console.log('Tie Game!');
+            return
         }
     }
 
