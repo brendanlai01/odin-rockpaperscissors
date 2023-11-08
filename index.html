@@ -62,13 +62,13 @@
         let losses = 0;
         let draws = 0;
 
-        const btn = document.querySelectorAll('#btn');
+        const btns = document.querySelectorAll('#btn');
 
-        btn.forEach(button => {
+        btns.forEach(button => {
             button.addEventListener('click', () => {
-                console.log("test");
+                console.log(button.innerText);
             })
-        })
+        });
     }   
     game();
 </script>
