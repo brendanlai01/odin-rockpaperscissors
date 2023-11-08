@@ -11,9 +11,9 @@
     <h1 id="title">ROCK PAPER SCISSORS!</h1>
     <!-- Button order: Rock, Paper, Scissors -->
     <p id="container">
-        <button><img src="https://cdn-icons-png.flaticon.com/512/4866/4866842.png"></img></button> 
-        <button><img src="https://cdn-icons-png.flaticon.com/512/2377/2377960.png"></img></button>
-        <button><img src="https://cdn-icons-png.flaticon.com/512/2542/2542041.png"></img></button>
+        <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/4866/4866842.png"></img></button> 
+        <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/2377/2377960.png"></img></button>
+        <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/2542/2542041.png"></img></button>
     </p>
     
 </body>
@@ -28,8 +28,7 @@
         return compChoice;
     }
 
-    function playRound(){
-        let playerSelection = prompt("Select Rock Paper or Scissors against the Computer!");
+    function playRound(playerSelection){
         let computerSelection = getComputerChoice();
 
         playerSelection = playerSelection.toLowerCase();
@@ -59,14 +58,18 @@
     }
 
     function game(){
-        let winCounter = 0;
-        let loseCounter = 0;
-        let drawCounter = 0;
+        let wins = 0;
+        let losses = 0;
+        let draws = 0;
 
+        const btn = document.querySelectorAll('#btn');
 
-    }
-    
-
+        btn.forEach(button => {
+            button.addEventListener('click', () => {
+                console.log("test");
+            })
+        })
+    }   
     game();
 </script>
 
