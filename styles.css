@@ -8,3 +8,9 @@ body{
     font-size: 48px;
     color:aliceblue;
 }
+
+#container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
