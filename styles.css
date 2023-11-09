@@ -29,6 +29,14 @@ body{
     font-weight: bold;
 }
 
+#score{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    text-align: center;
+    color: white;
+}
+
 img{
     max-width: 200px;
     height: auto;

@@ -18,13 +18,21 @@
     <div id="results">
         <p>Results</p>
         <ul>
-            
+
         </ul>
+    </div>
+    <div id="score">
+        <span>Player: <span id="playerScore">0</span></span> 
+        <span>Computer: <span id="compScore">0</span></span> 
+        <span>Draws: <span id="ties">0</span></span>
     </div>
     
 </body>
 
 <script>
+    let wins = 0;
+    let losses = 0;
+    let draws = 0;
 
     function getComputerChoice(){
         let choices = ['rock', 'paper', 'scissors'];
@@ -63,20 +71,13 @@
         }
     }
 
-    function game(){
-        let wins = 0;
-        let losses = 0;
-        let draws = 0;
+    const btns = document.querySelectorAll('#btn');
 
-        const btns = document.querySelectorAll('#btn');
-
-        btns.forEach(button => {
-            button.addEventListener('click', () => {
-                console.log(button.innerText);
-            })
-        });
-    }   
-    game();
+    btns.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log(button.innerText);
+        })
+    });
 </script>
 
 </html>
