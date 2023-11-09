@@ -9,7 +9,7 @@ body{
     color: #8be9fd;
 }
 
-#container{
+.container{
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -22,19 +22,31 @@ body{
     padding: 10px;
 }
 
-#log p{
+.log p{
     text-align: center;
     font-size: 36px;
     color: #8be9fd;
     font-weight: bold;
 }
 
-#score{
+.log #resultList{
+    text-align: center;
+    list-style-type: none;
+    color: #F8F8F2;
+    font-weight: bold;
+}
+
+.score{
     display: flex;
     justify-content: center;
     gap: 100px;
     text-align: center;
-    color: white;
+    color: #8be9fd;
+}
+
+.score :is(#playerScore, #compScore, #ties){
+    color:white;
+    font-weight: bold;
 }
 
 img{

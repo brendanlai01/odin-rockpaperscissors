@@ -10,18 +10,18 @@
 <body>
     <h1 id="title">ROCK PAPER SCISSORS!</h1>
     <!-- Button order: Rock, Paper, Scissors -->
-    <div id="container">
+    <div class="container">
         <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/4866/4866842.png">ROCK</img></button> 
         <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/2377/2377960.png">PAPER</img></button>
         <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/2542/2542041.png">SCISSORS</img></button>
     </div>
-    <div id="log">
+    <div class="log">
         <p>Results</p>
         <ul id="resultList">
 
         </ul>
     </div>
-    <div id="score">
+    <div class="score">
         <span>Player: <span id="playerScore">0</span></span> 
         <span>Computer: <span id="compScore">0</span></span> 
         <span>Draws: <span id="ties">0</span></span>
@@ -45,7 +45,7 @@
     function playRound(playerSelection){
         let computerSelection = getComputerChoice();
         playerSelection = playerSelection.toLowerCase();
-        if(wins == 5 || losses == 5 || draws == 5) return;
+        if(wins == 5 || losses == 5) return;
 
         let results = document.querySelector('#resultList'); 
         let result = document.createElement('li');
@@ -54,23 +54,23 @@
             result.textContent = 'You Win! Computer played Scissors';
             results.appendChild(result);
         } else if (playerSelection == 'paper' && computerSelection == 'rock'){
-            console.log('You Win! Computer played Rock');
-            return 1;
+            result.textContent = 'You Win! Computer played Rock';
+            results.appendChild(result);
         } else if (playerSelection == 'scissors' && computerSelection == "paper"){
-            console.log('You Win! Computer played Paper');
-            return 1;
+            result.textContent = 'You Win! Computer played Paper';
+            results.appendChild(result);
         } else if (playerSelection == 'rock' && computerSelection == 'paper'){
-            console.log('You Lose! Computer played Paper');
-            return 2;
+            result.textContent = 'You Lose! Computer played Paper';
+            results.appendChild(result);
         } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
-            console.log('You Lose! Computer played Rock');
-            return 2;
+            result.textContent = 'You Lose! Computer played Rock';
+            results.appendChild(result);
         } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
-            console.log('You Lose! Computer played Scissors');
-            return 2;
+            result.textContent= 'You Lose! Computer played Scissors';
+            results.appendChild(result);
         } else if (playerSelection == computerSelection){
-            console.log('Tie Game!');
-            return 0;
+            result.textContent = 'Tie Game!';
+            results.appendChild(result);
         }
     }
 
