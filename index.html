@@ -15,9 +15,9 @@
         <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/2377/2377960.png">PAPER</img></button>
         <button id="btn"><img src="https://cdn-icons-png.flaticon.com/512/2542/2542041.png">SCISSORS</img></button>
     </div>
-    <div id="results">
+    <div id="log">
         <p>Results</p>
-        <ul>
+        <ul id="resultList">
 
         </ul>
     </div>
@@ -44,12 +44,15 @@
 
     function playRound(playerSelection){
         let computerSelection = getComputerChoice();
-
         playerSelection = playerSelection.toLowerCase();
+        if(wins == 5 || losses == 5 || draws == 5) return;
+
+        let results = document.querySelector('#resultList'); 
+        let result = document.createElement('li');
 
         if(playerSelection == 'rock' && computerSelection == 'scissors'){
-            console.log('You Win! Computer played Scissors');
-            return 1;   
+            result.textContent = 'You Win! Computer played Scissors';
+            results.appendChild(result);
         } else if (playerSelection == 'paper' && computerSelection == 'rock'){
             console.log('You Win! Computer played Rock');
             return 1;
@@ -75,7 +78,7 @@
 
     btns.forEach(button => {
         button.addEventListener('click', () => {
-            console.log(button.innerText);
+            playRound(button.innerText);
         })
     });
 </script>
