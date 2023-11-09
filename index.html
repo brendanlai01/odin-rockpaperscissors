@@ -34,7 +34,7 @@
     let results = document.querySelector('#resultList'); 
     let result = document.createElement('span');
     let playerWins = document.querySelector('#playerScore');
-    let computerWins = document.querySelector('#compScore');
+    let compWins = document.querySelector('#compScore');
     let ties = document.querySelector('#ties');
 
     function getComputerChoice(){
@@ -45,6 +45,18 @@
         return compChoice;
     }
 
+    function playerWin(){
+        results.appendChild(result);
+        wins += 1;
+        playerWins.textContent = wins;
+    }
+
+    function computerWin(){
+        results.appendChild(result);
+        losses += 1;
+        compWins.textContent = losses;
+    }
+
     function playRound(playerSelection){
         let computerSelection = getComputerChoice();
         playerSelection = playerSelection.toLowerCase();
@@ -52,34 +64,22 @@
 
         if(playerSelection == 'rock' && computerSelection == 'scissors'){
             result.textContent = 'You Win! Computer played Scissors';
-            results.appendChild(result);
-            wins += 1;
-            playerWins.textContent = wins;
+            playerWin();
         } else if (playerSelection == 'paper' && computerSelection == 'rock'){
             result.textContent = 'You Win! Computer played Rock';
-            results.appendChild(result);
-            wins += 1;
-            playerWins.textContent = wins;
+            playerWin();
         } else if (playerSelection == 'scissors' && computerSelection == "paper"){
             result.textContent = 'You Win! Computer played Paper';
-            results.appendChild(result);
-            wins += 1;
-            playerWins.textContent = wins;
+            playerWin();
         } else if (playerSelection == 'rock' && computerSelection == 'paper'){
             result.textContent = 'You Lose! Computer played Paper';
-            results.appendChild(result);
-            losses += 1;
-            computerWins.textContent = losses;
+            computerWin();
         } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
             result.textContent = 'You Lose! Computer played Rock';
-            results.appendChild(result);
-            losses += 1;
-            computerWins.textContent = losses;
+            computerWin();
         } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
             result.textContent= 'You Lose! Computer played Scissors';
-            results.appendChild(result);
-            losses += 1;
-            computerWins.textContent = losses;
+            computerWin();
         } else if (playerSelection == computerSelection){
             result.textContent = 'Tie Game!';
             results.appendChild(result);
